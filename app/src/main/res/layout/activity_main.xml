@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    style="@style/menu_bg"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        style="@style/toolbar_bg"
+        android:title="@string/app_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/main_activity_title"
+        style="@style/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/main_activity_menu_title"
+        app:layout_constraintBottom_toTopOf="@+id/main_activity_ly_buttons"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/main_activity_ly_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/main_activity_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/main_activity_rl_calcular"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <View
+                    android:id="@+id/main_activity_btn_calcular"
+                    android:layout_width="137dp"
+                    android:layout_height="137dp"
+                    android:background="@drawable/button_bg"/>
+                <ImageView
+                    android:id="@+id/main_activity_iv_calcular"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/calculator"
+                    android:translationZ="2dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/main_activity_text_calcular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_activity_text_calcular"
+                style="@style/main_activity_text_button"
+                android:layout_marginTop="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/main_activity_rl_registers"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <View
+                    android:id="@+id/main_activity_btn_registers"
+                    android:layout_width="137dp"
+                    android:layout_height="137dp"
+                    android:background="@drawable/button_bg" />
+
+                <ImageView
+                    android:id="@+id/main_activity_iv_registers"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/format_list_bulleted"
+                    android:translationZ="2dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/main_activity_text_declarations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_activity_text_declaraciones"
+                style="@style/main_activity_text_button"
+                android:layout_marginTop="15dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

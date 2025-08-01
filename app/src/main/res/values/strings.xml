@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">DeclarApp</string>
+
+    <string name="main_activity_menu_title">PAGOS DEFINITIVOS</string>
+    <string name="main_activity_text_calcular">Calcular</string>
+    <string name="main_activity_text_declaraciones">Declaraciones</string>
+
+
+    <string name="calculate_activity_title">GANANCIAS DEL MES</string>
+    <string name="calculate_activity_first_week">Primera semana</string>
+    <string name="calculate_activity_second_week">Segunda semana</string>
+    <string name="calculate_activity_third_week">Tercera semana</string>
+    <string name="calculate_activity_fourth_week">Cuarta semana</string>
+    <string name="calculate_activity_fifth_week">Quinta semana</string>
+    <string name="calculate_activity_upload_file_title">Elige los archivos CFDI(.xml)</string>
+    <string name="calculate_activity_total_text">Total efectivo:</string>
+    <string name="calculate_activity_btn_calculate_text">Calcular</string>
+
+    <string-array name="weekens">
+        <item>Una semana</item>
+        <item>Dos semanas</item>
+        <item>Tres semanas</item>
+        <item>Cuatro semanas</item>
+        <item>Cinco semanas</item>
+    </string-array>
+
+    <string name="previous_activity_title">Vista previa</string>
+    <string name="previous_activity_total_text">Total del mes</string>
+    <string name="previous_activity_payment_text">¿La declaración ya fue pagada?</string>
+    <string name="previous_activity_btn_save">Guardar</string>
+    <string name="previous_activity_text_month">Mes</string>
+    <string name="previous_activity_text_status">Estado</string>
+    <string name="previous_activity_text_cash">Efectivo</string>
+    <string name="previous_activity_text_isr">ISR</string>
+    <string name="previous_activity_text_intermediary">Intermediario</string>
+
+    <string name="declaration_activity_popup_delete_text">¿Desea borrar la declaración?</string>
+    <string name="declaration_activity_popup_btn_delete_text">Borrar</string>
+    <string name="declaration_activity_popup_btn_cancel_text">Cancelar</string>
+
+    <string name="card_declaration_text_intermediary">Intermediario</string>
+    <string name="card_declaration_text_cash">Efectivo</string>
+    <string name="card_declaration_text_isr">ISR</string>
+    <string name="card_declaration_text_status">Estado</string>
+    <string name="card_declaration_delete_text">Eliminar declaración</string>
+
+</resources>

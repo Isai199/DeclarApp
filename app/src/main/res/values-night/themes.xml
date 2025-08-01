@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DeclarApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+
+
+    <style name="text_title" parent="text_font">
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="main_activity_text_button" parent="text_font">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="upload_title">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="text_style" parent="text_font">
+        <item name="android:textColor">@color/low_light_gray</item>
+    </style>
+
+    <style name="menu_bg">
+        <item name="android:background">@color/medium_gray</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="toolbar_bg">
+        <item name="android:background">@color/low_dark_gray</item>
+    </style>
+
+    <color name="item_color">@color/gray</color>
+    <color name="icon_color">@color/light_gray</color>
+    <color name="textarea_color">@color/low_light_gray</color>
+    <color name="data_bg_color">@color/gray</color>
+    <color name="triangle_color">@color/low_light_gray</color>
+
+    <style name="button_bg">
+        <item name="android:backgroundTint">@color/secondary_dark_green</item>
+    </style>
+
+    <color name="card_data_bg">
+        <item name="android:background">@color/light_gray</item>
+    </color>
+
+    <style name="popup_bg">
+        <item name="android:background">@color/black_transparent</item>
+    </style>
+
+    <style name="checkbox_button_bg" parent="text_style">
+        <item name="android:buttonTint">@color/secondary_dark_green</item>
+    </style>
+
+</resources>
