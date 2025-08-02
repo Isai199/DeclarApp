@@ -73,7 +73,11 @@
                                 android:id="@+id/calculate_activity_et_first_week"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
-                                android:text="$ 858"
+                                android:hint="0.0"
+                                android:textColorHint="@color/gray"
+                                android:inputType="numberDecimal"
+                                android:maxLength="8"
+                                android:drawableLeft="@drawable/money_sing"
                                 style="@style/text_style"
                                 android:layout_weight="1"/>
                     </LinearLayout>
@@ -94,7 +98,11 @@
                                 android:id="@+id/calculate_activity_et_second_week"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
-                                android:text="$ 858"
+                                android:hint="0.0"
+                                android:textColorHint="@color/gray"
+                                android:inputType="numberDecimal"
+                                android:maxLength="8"
+                                android:drawableLeft="@drawable/money_sing"
                                 style="@style/text_style"
                                 android:layout_weight="1"/>
                     </LinearLayout>
@@ -115,7 +123,11 @@
                                 android:id="@+id/calculate_activity_et_third_week"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
-                                android:text="$ 858"
+                                android:hint="0.0"
+                                android:textColorHint="@color/gray"
+                                android:inputType="numberDecimal"
+                                android:maxLength="8"
+                                android:drawableLeft="@drawable/money_sing"
                                 style="@style/text_style"
                                 android:layout_weight="1"/>
                     </LinearLayout>
@@ -136,7 +148,11 @@
                                 android:id="@+id/calculate_activity_et_fourth_week"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
-                                android:text="$ 858"
+                                android:hint="0.0"
+                                android:textColorHint="@color/gray"
+                                android:inputType="numberDecimal"
+                                android:maxLength="8"
+                                android:drawableLeft="@drawable/money_sing"
                                 style="@style/text_style"
                                 android:layout_weight="1"/>
                     </LinearLayout>
@@ -157,7 +173,11 @@
                             android:id="@+id/calculate_activity_et_fifth_week"
                             android:layout_width="50dp"
                             android:layout_height="wrap_content"
-                            android:text="$ 858"
+                            android:hint="0.0"
+                            android:textColorHint="@color/gray"
+                            android:inputType="numberDecimal"
+                            android:maxLength="8"
+                            android:drawableLeft="@drawable/money_sing"
                             style="@style/text_style"
                             android:layout_weight="1"/>
                     </LinearLayout>

@@ -16,7 +16,7 @@
     <string name="calculate_activity_total_text">Total efectivo:</string>
     <string name="calculate_activity_btn_calculate_text">Calcular</string>
 
-    <string-array name="weekens">
+    <string-array name="weekes">
         <item>Una semana</item>
         <item>Dos semanas</item>
         <item>Tres semanas</item>
