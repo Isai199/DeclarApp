@@ -1,6 +1,7 @@
 package com.isadev.declarapp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputFilter
@@ -10,12 +11,17 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.Toolbar
 import androidx.core.widget.addTextChangedListener
+import org.w3c.dom.Element
+import org.w3c.dom.Node
+import java.io.File
+import javax.xml.parsers.DocumentBuilderFactory
 
 class CalculateActivity : AppCompatActivity(), customToolbar, TextWatcher {
     lateinit var btnCalculate: AppCompatButton
@@ -32,6 +38,10 @@ class CalculateActivity : AppCompatActivity(), customToolbar, TextWatcher {
     lateinit var etThirdWeek: EditText
     lateinit var etFourthWeek: EditText
     lateinit var etFifthWeek: EditText
+
+    lateinit var rlUploadFile: RelativeLayout
+    lateinit var viewTextarea: View
+    private var REQUEST_CODE_FILE = 1
 
     lateinit var tvTotal: TextView
     var total: Double = 0.0
@@ -68,6 +78,8 @@ class CalculateActivity : AppCompatActivity(), customToolbar, TextWatcher {
         etThirdWeek.setText("")
         etFourthWeek.setText("")
         etFifthWeek.setText("")
+
+        initUploadFile()
 
         tvTotal = findViewById(R.id.calculate_activity_total_text)
 
@@ -141,6 +153,58 @@ class CalculateActivity : AppCompatActivity(), customToolbar, TextWatcher {
     }
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {  }
     override fun afterTextChanged(s: Editable?) {  }
+
+    private fun initUploadFile() {
+        rlUploadFile = findViewById(R.id.calculate_activity_rl_upload_file)
+        viewTextarea = findViewById(R.id.calculate_activity_view_textarea)
+
+        viewTextarea.setOnClickListener {
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "text/xml"
+            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
+            startActivityForResult(intent, 1)
+        }
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == REQUEST_CODE_FILE && resultCode == RESULT_OK) {
+            if (data?.clipData != null) {
+                val count = data.clipData!!.itemCount
+                for (i in 0 until count) {
+                    val uri = data.clipData!!.getItemAt(i).uri
+                    readXml(uri)
+                }
+            } else if (data?.data != null) {
+                val uri = data.data
+                readXml(uri)
+            }
+
+        }
+    }
+
+    private fun readXml(uri: Uri?) {
+        val inputStream = contentResolver.openInputStream(uri!!)
+        if (inputStream != null) {
+
+            val factory = DocumentBuilderFactory.newInstance()
+            factory.isNamespaceAware = true
+
+            val docBuilder = factory.newDocumentBuilder()
+            val doc = docBuilder.parse(inputStream)
+            doc.documentElement.normalize()
+
+            val nodeList = doc.getElementsByTagNameNS("*","ImpRetenidos")
+
+            for (i in 0 until nodeList.length) {
+                val element = nodeList.item(i) as? Element ?: continue
+                val total = element.getAttribute("TipoPagoRet")
+                println("TipoPagoRet: $total")
+            }
+        } else {
+            println("Error al abrir el archivo XML")
+        }
+    }
 
     private fun calculateTotal() {
         var auxTotal: Double = 0.0
