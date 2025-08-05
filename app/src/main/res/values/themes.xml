@@ -46,6 +46,8 @@
         <item name="android:backgroundTint">@color/light_green</item>
     </style>
 
+    <color name="button_is_active_bg">@color/light_green</color>
+
     <color name="card_data_bg">
         <item name="android:background">@color/light_white</item>
     </color>

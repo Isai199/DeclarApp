@@ -198,18 +198,24 @@
             <RelativeLayout
                 android:id="@+id/calculate_activity_rl_upload_file"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
                 android:gravity="center"
+                android:tag="upload"
+                android:background="@drawable/textarea_bg"
                 android:layout_marginTop="8dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/calculate_activity_textarea_tile">
 
-                <View
-                    android:id="@+id/calculate_activity_view_textarea"
+
+                <LinearLayout
+                    android:id="@+id/calculate_activity_ly_upload_file"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:background="@drawable/textarea_bg" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/calculate_activity_iv_upload_file"
@@ -236,8 +242,8 @@
                 android:id="@+id/calculate_activity_btn_calculate"
                 android:layout_width="250dp"
                 android:layout_height="60dp"
-                style="@style/button_bg"
                 android:text="@string/calculate_activity_btn_calculate_text"
+                android:background="@drawable/button_is_enable_bg"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="100dp"
                 app:layout_constraintLeft_toLeftOf="parent"

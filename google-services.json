@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "376915942744",
+    "project_id": "declarapp-88079",
+    "storage_bucket": "declarapp-88079.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376915942744:android:1932c7411d7979758f192d",
+        "android_client_info": {
+          "package_name": "com.isadev.declarapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZNyRomcHj3Nt_cNXyWJBULHjJoRT8wTM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

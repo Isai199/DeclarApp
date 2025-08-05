@@ -33,6 +33,7 @@
     <string name="previous_activity_text_cash">Efectivo</string>
     <string name="previous_activity_text_isr">ISR</string>
     <string name="previous_activity_text_intermediary">Intermediario</string>
+    <string name="previous_activity_text_total_sat">Pagar al sat:</string>
 
     <string name="declaration_activity_popup_delete_text">¿Desea borrar la declaración?</string>
     <string name="declaration_activity_popup_btn_delete_text">Borrar</string>

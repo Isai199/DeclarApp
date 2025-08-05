@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/previous_activity_scroll"
     style="@style/menu_bg"
     tools:context=".PreviousActivity">
 
@@ -190,6 +190,18 @@
                             android:textColor="@color/red"/>
                 </LinearLayout>
         </LinearLayout>
+        <TextView
+            android:id="@+id/previous_activity_total_sat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/previous_activity_text_total_sat"
+            style="@style/text_style"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/previous_activity_ly_data"/>
         <CheckBox
             android:id="@+id/previous_activity_cb_payment"
             android:layout_width="wrap_content"
@@ -199,7 +211,7 @@
             android:checked="true"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/previous_activity_ly_data"
+            app:layout_constraintTop_toBottomOf="@+id/previous_activity_total_sat"
             app:layout_constraintBottom_toTopOf="@+id/previous_activity_btn_save"/>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/previous_activity_btn_save"
