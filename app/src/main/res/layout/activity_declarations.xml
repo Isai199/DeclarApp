@@ -25,6 +25,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/spinner_text_color"
             android:layout_gravity="center"
             android:textAlignment="center"
             android:layout_marginTop="100dp"/>

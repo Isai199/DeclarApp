@@ -46,6 +46,8 @@
 
     <color name="card_data_bg">@color/light_gray</color>
 
+    <color name="spinner_text_color">@color/light_white</color>
+
     <style name="popup_bg">
         <item name="android:background">@color/black_transparent</item>
     </style>

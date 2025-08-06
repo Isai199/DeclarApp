@@ -50,6 +50,8 @@
 
     <color name="card_data_bg">@color/light_white</color>
 
+    <color name="spinner_text_color">@color/gray</color>
+
     <style name="popup_bg">
         <item name="android:background">@color/green_transparent</item>
     </style>

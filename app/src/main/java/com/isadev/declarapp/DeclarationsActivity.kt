@@ -62,7 +62,7 @@ class DeclarationsActivity : AppCompatActivity(), customToolbar, DeclarationsAda
     }
     private fun initSpinner() {
         spWeekends.isEnabled = true
-        var adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, years.toList())
+        var adapter = ArrayAdapter(this, R.layout.spinner_item, years.toList())
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spWeekends.adapter = adapter
 
