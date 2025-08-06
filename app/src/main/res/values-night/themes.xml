@@ -44,9 +44,7 @@
 
     <color name="button_is_active_bg">@color/secondary_dark_green</color>
 
-    <color name="card_data_bg">
-        <item name="android:background">@color/light_gray</item>
-    </color>
+    <color name="card_data_bg">@color/light_gray</color>
 
     <style name="popup_bg">
         <item name="android:background">@color/black_transparent</item>

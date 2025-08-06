@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.firestore.FirebaseFirestore
 
 class PreviousActivity : AppCompatActivity(), customToolbar {
 
@@ -27,7 +26,9 @@ class PreviousActivity : AppCompatActivity(), customToolbar {
     private var total: Double = 0.0
     private var intermediary: Double = 0.0
     private var month: String = ""
+    private var numberMonth: Int = 0
     private var year: Int = 0
+    private var totalCash: Double = 0.0
 
     private var status: String = "pendiente"
 
@@ -61,7 +62,9 @@ class PreviousActivity : AppCompatActivity(), customToolbar {
         total = 0.0
         intermediary = 0.0
         month = ""
+        numberMonth = 0
         year = 0
+        totalCash = 0.0
 
         cbPayment.isChecked = false
         status = "pendiente"
@@ -88,10 +91,11 @@ class PreviousActivity : AppCompatActivity(), customToolbar {
         isr = data!!.getDouble("isr")
         total = data?.getDouble("total") ?: 0.0
         intermediary = data!!.getDouble("income_without_vat")
+        numberMonth = data!!.getInt("month")
         month =  Utility.getMonth(data!!.getInt("month"))
         year = data!!.getString("year").toString().toInt()
 
-        val totalCash = total - intermediary
+        totalCash = total - intermediary
         val totalMonth = totalCash + intermediary
 
         val isrCaused = totalMonth * 0.021
@@ -109,18 +113,18 @@ class PreviousActivity : AppCompatActivity(), customToolbar {
         tvTotalSat.text = "Pagar al sat(aprox): $ $totalSat"
     }
     private fun saveDeclaration() {
-        var dbDeclarations = FirebaseFirestore.getInstance()
-        dbDeclarations.collection("declarations/$year/$month").document().set(
-            hashMapOf(
-                "isr" to isr,
-                "total" to total,
-                "intermediary" to intermediary,
-                "month" to month,
-                "year" to year,
-                "status" to status,
-                "total_sat" to totalSat
-            )
+        val docName = year.toString() + ("0"+numberMonth)
+        val mapDeclarartion = hashMapOf<String, Any>(
+            "isr" to isr,
+            "total" to total,
+            "intermediary" to Utility.roundNumber(intermediary),
+            "month" to numberMonth,
+            "year" to year,
+            "status" to status,
+            "total_sat" to totalSat,
+            "cash" to Utility.roundNumber(totalCash)
         )
+        BDdeclarations("declarations").setDeclaration(mapDeclarartion, docName)
         Snackbar.make(scrollPrevious, "Declaración guardada con éxito", Snackbar.LENGTH_LONG).setAction("OK") {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

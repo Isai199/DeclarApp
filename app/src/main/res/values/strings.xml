@@ -44,5 +44,6 @@
     <string name="card_declaration_text_isr">ISR</string>
     <string name="card_declaration_text_status">Estado</string>
     <string name="card_declaration_delete_text">Eliminar declaración</string>
+    <string name="card_declaration_text_total_sat">Pago al sat(aprox)</string>
 
 </resources>

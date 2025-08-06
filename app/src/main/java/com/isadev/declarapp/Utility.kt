@@ -1,5 +1,7 @@
 package com.isadev.declarapp
 
+import android.widget.LinearLayout
+
 object Utility {
     internal fun roundNumber(number: Double): Double {
         var decimals: String = ""
@@ -11,11 +13,17 @@ object Utility {
         }
     }
 
-    internal fun getMonth(month: Int): String {
+    fun getMonth(month: Int): String {
         val listMonth = arrayOf(
             "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
             "Octubre", "Noviembre", "Diciembre")
 
         return listMonth[month - 1]
+    }
+
+    fun setHeightLinearLayout(ly: LinearLayout, value: Int) {
+        val params: LinearLayout.LayoutParams = ly.layoutParams as LinearLayout.LayoutParams
+        params.height = value
+        ly.layoutParams = params
     }
 }

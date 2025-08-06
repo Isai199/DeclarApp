@@ -34,6 +34,14 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    dataBinding {
+        enable = true
+    }
 }
 
 dependencies {
@@ -50,4 +58,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(platform("com.google.firebase:firebase-bom:34.0.0"))
+
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
 }
