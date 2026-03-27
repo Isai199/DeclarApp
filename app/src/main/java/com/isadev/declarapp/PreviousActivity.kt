@@ -95,11 +95,11 @@ class PreviousActivity : AppCompatActivity(), customToolbar {
         month =  Utility.getMonth(data!!.getInt("month"))
         year = data!!.getString("year").toString().toInt()
 
+        total = total / 1.16
         totalCash = total - intermediary
         val totalMonth = totalCash + intermediary
 
         val isrCaused = totalMonth * 0.021
-
         val isrInCharge = isrCaused - isr
         val ivaInCharge = totalCash * 0.08
 
